@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-social/bootstrap-social.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/bootstrap-icons.svg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Stream-IT</title>
+  </head>
+  <body class="body">
+    <!-- navbar -->
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <div class="collapse navbar-collapse" id="Navbar">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-sm-2 title">
+          Stream-IT
+          <a class="fa fa-github-alt fa-sm github-icon" href="./index.html"></a>
+        </div>
+        <ul class="navbar-nav col-sm-7">
+          <li class="offset-sm-2 col-sm-8 search">
+            <form>
+              <div class="row">
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="search"
+                  />
+                </div>
+                <input
+                  class="btn btn-outline-info col-sm-2"
+                  type="submit"
+                  value="Search"
+                  style="float: right"
+                />
+              </div>
+            </form>
+          </li>
+        </ul>
+        <a
+          style="color: white"
+          type="button"
+          class="fas fa-heart fa-lg ms-auto"
+          aria-hidden="true"
+          >&nbsp; &nbsp; &nbsp;</a
+        >
+        <a
+          id="loginButton"
+          data-toggle="modal"
+          data-target="#loginModal"
+          type="button"
+          class="fa fa-sign-in fa-lg"
+          style="color: white"
+        >
+          <span class="font-color-light-nav">&nbsp; Login</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- login modal -->
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title font-color-dark">Login</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              data-dismiss="modal"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3">
+                <!-- mb == margin bottom-->
+                <label for="inputEmail3" class="col-sm-2 col-form-label"
+                  >Email</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail3"
+                    placeholder="email"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Password</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="password"
+                  />
+                </div>
+              </div>
+              <div class="offset-sm-2">
+                <button type="submit" class="btn btn-outline-info">
+                  Log in
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-outline-info"
+                  id="signupButton"
+                  role="button"
+                  data-toggle="modal"
+                  data-target="#signupModal"
+                  data-dismiss="modal"
+                >
+                  Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- signup Modal -->
+    <div id="signupModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title font-color-dark">Sign Up</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              data-dismiss="modal"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3 mt-3">
+                <label for="firstname" class="col-sm-2 col-form-label"
+                  >Name</label
+                >
+                <label for="lastname" class="col-sm-2 col-form-label sr-only"
+                  >Name</label
+                >
+                <div class="col-sm-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstname"
+                    placeholder="first name"
+                  />
+                </div>
+                <div class="col-sm-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    placeholder="last name"
+                  />
+                </div>
+              </div>
+              <div class="row mb-5">
+                <label for="dateOfBirth" class="col-sm-2 col-form-label"
+                  >Date Of Birth</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dateOfBirth"
+                    placeholder="Date Of Birth"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label"
+                  >Email</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail3"
+                    placeholder="email"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Password</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="password"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="gridCheck1"
+                    />
+                    <label class="form-check-label" for="gridCheck1">
+                      Remember Me
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="offset-sm-2">
+                <button type="submit" class="btn btn-outline-info">
+                  Sign Up
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-outline-info"
+                  id="LoginButton"
+                  role="button"
+                  data-toggle="modal"
+                  data-target="#loginModal"
+                  data-dismiss="modal"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- movie modal-->
+    <div id="movieModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <img
+                  class="img-fluid btn-invisible"
+                  src="img/animation/luca.webp"
+                />
+              </div>
+              <div class="col-sm-8">
+                <h4>Luca</h4>
+                <h1>2021 Animation/Adventure 1h36</h1>
+                <p>
+                  Set in a beautiful seaside town on the Italian Riviera, the
+                  original animated feature is a coming-of-age story about one
+                  young boy experiencing an unforgettable summer filled with
+                  gelato, pasta and endless scooter rides. Luca shares these
+                  adventures with his newfound best friend, but all the fun is
+                  threatened by a deeply-held secret: he is a sea monster from
+                  another world just below the water's surface.
+                </p>
+                <h1>Enrico Casarosa</h1>
+                <button 
+                  data-dismiss="modal"
+                  class="btn btn-outline-info mt-4"
+                  id="lucaButton"
+                  data-toggle="modal"
+                  data-target="#lucaModal"
+                >
+                  Watch Trailer
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- luca modal-->
+    <div id="lucaModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content modal-lg">
+          <div class="modal-body modal-lg">
+            <iframe
+          class="trailer"
+          id="trailer"
+          title="YoutubeVideoPlayer"
+          style="width: 760px;; height: 410px;"
+          src="https://www.youtube.com/embed/0hgHY9k-44U"
+          allowfullscreen="allowfullscreen"
+          frameborder="0"
+          allow="autoplay"
+        >
+        </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="lucaModal" class="modal modal-play" role="dialog">
+      <div class="modal-content">
+        <button
+          id="lucaCloseButton"
+          class="btn btn-danger closeIFrame"
+          data-dismiss="modal"
+        >
+          CLOSE
+        </button>
+        <iframe
+          class="trailer"
+          id="trailer"
+          title="YoutubeVideoPlayer"
+          style="width: fit-content; height: fit-content;"
+          src="https://www.youtube.com/embed/0hgHY9k-44U"
+          allowfullscreen="allowfullscreen"
+          frameborder="0"
+          allow="autoplay"
+        >
+        </iframe>
+      </div>
+    </div> -->
+
+    <!-- big image -->
+    <div class="container">
+      <img class="bigimage mt-5" src="img/bestNewMovies.png" />
+    </div>
+
+    <!-- cards genres -->
+    <div class="container mb-5">
+      <div class="d-none d-sm-block">
+        <div class="row offset-sm-1">
+          <div class="col-sm-2 mt-5 d-flex">
+            <a type="button" class="btn btn-outline-info genre" href="#action"
+              >ACTION</a
+            >
+          </div>
+          <div class="col-sm-2 mt-5 d-flex">
+            <a type="button" class="btn btn-outline-info genre" href="#comedy"
+              >COMEDY</a
+            >
+          </div>
+          <div class="col-sm-2 mt-5 d-flex">
+            <a
+              type="button"
+              class="btn btn-outline-info genre"
+              href="#animation"
+              >ANIMATION</a
+            >
+          </div>
+          <div class="col-sm-2 mt-5 d-flex">
+            <a type="button" class="btn btn-outline-info genre" href="#thriller"
+              >THRILLER</a
+            >
+          </div>
+          <div class="col-sm-2 mt-5 d-flex">
+            <a type="button" class="btn btn-outline-info genre" href="#romance"
+              >ROMANCE</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--keep watching -->
+    <div id="keepwatching" class="container spacing">
+      <h4 class="mytitle">KEEP WATCHING</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselKeepwatching"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active"></div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselKeepwatching"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselkeepWatching"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--My list -->
+    <div id="mylist" class="container spacing">
+      <h4 class="mytitle">MY LIST</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselMylist"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active"></div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselMylist"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselMylist"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- trending -->
+    <div id="trending" class="container spacing">
+      <h4 class="mytitle">TRENDING</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselTrending"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active"></div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselTrending"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselTrending"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel action  -->
+    <div id="action" class="container spacing">
+      <h4 class="mytitle">ACTION</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselAction"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active"></div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/inception.jpeg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/judgementOfParis.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/missionImpossible.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/pandemic.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/seized.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/theOtherGuys.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/theTomorrowWar.jpg" />
+                  <i class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/action/welcomeToThePunch.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselAction"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselAction"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- carousel comedy -->
+    <div id="comedy" class="container spacing">
+      <h4 class="mytitle">COMEDY</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselComedy"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/arthur.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/bridesMaids.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/damoAndIvor.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/jackass.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/mrBean.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/soThisIs30.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/theJonsons.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/wereTheMillers.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/comedy/WhiskeyTangoFoxtrot.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselComedy"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselComedy"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- carousel animation -->
+    <div id="animation" class="container spacing">
+      <h4 class="mytitle">ANIMATION</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselAnimation"
+          name="carouselStream"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active">
+              <div class="col-md-2">
+                <div
+                  class="card btn btn-invisible"
+                  id="movieButton"
+                  data-toggle="modal"
+                  data-target="#movieModal"
+                >
+                  <img class="img" src="img/animation/luca.webp" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/animation/soul.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/animation/bigHero6.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/animation/howToTrainADragon.png" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/animation/howToTrainADragon2.png" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/animation/howToTrainADragon3.png" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img
+                    class="img"
+                    src="img/animation/cloudyWithaChanceOfMeatballs.jpg"
+                  />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img
+                    class="img"
+                    src="img/animation/cloudyWithaChanceOfMeatballs2.jpg"
+                  />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselAnimation"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselAnimation"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- carousel thriller -->
+    <div id="thriller" class="container spacing">
+      <h4 class="mytitle">Thriller</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselThriller"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/cabinInTheWoods.jpeg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/cherry.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/choasWalking.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/everyBreathYouTake.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/morgue.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/theDjinn.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/theNight.png" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/thriller/thePlatform.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselThriller"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselThriller"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- carousel romance  -->
+    <div id="romance" class="container spacing">
+      <h4 class="mytitle">ROMANCE</h4>
+      <div class="row mx-auto my-auto">
+        <div
+          id="carouselRomance"
+          class="carousel slide w-100"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item active">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/fivefeetApart.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/fiveyears.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img
+                    class="img"
+                    src="img/romance/howToLoseAGuyInTenDays.jpg"
+                  />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/isntItRomantic.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/ourJourney.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/theNotebook.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/Titanic.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="col-md-2">
+                <div class="card btn btn-invisible">
+                  <img class="img" src="img/romance/youGetMe.jpg" />
+                  <i role="button" class="fa fa-heart heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#carouselRomance"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              class="
+                carousel-control-prev-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#carouselRomance"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              class="
+                carousel-control-next-icon
+                bg-dark
+                border border-dark
+                rounded-circle
+              "
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-outline-info btn-floating btn-lg"
+      id="btn-back-to-top"
+    >
+      <i class="fa fa-arrow-up"></i>
+    </button>
+
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/btn-back-to-top.js"></script>
+    <script src="js/modal.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fa531e3861.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css\styles.css" />
+  </body>
+</html>
